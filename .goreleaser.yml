@@ -1,0 +1,45 @@
+version: 2
+
+project_name: kubectl-eks-viewer
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: kubectl-eks-viewer
+    main: ./cmd/kubectl-eks-viewer
+    binary: kubectl-eks-viewer
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - id: kubectl-eks-viewer
+    name_template: "{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE
+    format: tar.gz
+    format_overrides:
+      - goos: windows
+        format: zip
+
+checksum:
+  name_template: "{{ .ProjectName }}_checksums.txt"
+  algorithm: sha256
+
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'

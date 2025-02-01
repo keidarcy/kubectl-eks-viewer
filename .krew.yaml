@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: eks-viewer
+spec:
+  version: {{ .TagName }}
+  homepage: https://github.com/keidarcy/kubectl-eks-viewer
+  shortDescription: View AWS EKS cluster resources
+  description: |
+    A kubectl plugin that provides a convenient way to view AWS EKS cluster resources.
+    This plugin allows you to quickly inspect various EKS resources like nodegroups,
+    Fargate profiles, addons, and more, directly from your kubectl environment.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    {{addURIAndSha "https://github.com/keidarcy/kubectl-eks-viewer/releases/download/{{ .TagName }}/kubectl-eks-viewer_{{ .TagName }}_darwin_amd64.tar.gz" .TagName }}
+    bin: kubectl-eks-viewer
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    {{addURIAndSha "https://github.com/keidarcy/kubectl-eks-viewer/releases/download/{{ .TagName }}/kubectl-eks-viewer_{{ .TagName }}_darwin_arm64.tar.gz" .TagName }}
+    bin: kubectl-eks-viewer
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    {{addURIAndSha "https://github.com/keidarcy/kubectl-eks-viewer/releases/download/{{ .TagName }}/kubectl-eks-viewer_{{ .TagName }}_linux_amd64.tar.gz" .TagName }}
+    bin: kubectl-eks-viewer
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    {{addURIAndSha "https://github.com/keidarcy/kubectl-eks-viewer/releases/download/{{ .TagName }}/kubectl-eks-viewer_{{ .TagName }}_linux_arm64.tar.gz" .TagName }}
+    bin: kubectl-eks-viewer
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    {{addURIAndSha "https://github.com/keidarcy/kubectl-eks-viewer/releases/download/{{ .TagName }}/kubectl-eks-viewer_{{ .TagName }}_windows_amd64.zip" .TagName }}
+    bin: kubectl-eks-viewer.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    {{addURIAndSha "https://github.com/keidarcy/kubectl-eks-viewer/releases/download/{{ .TagName }}/kubectl-eks-viewer_{{ .TagName }}_windows_arm64.zip" .TagName }}
+    bin: kubectl-eks-viewer.exe 
