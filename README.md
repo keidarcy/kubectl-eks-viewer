@@ -27,10 +27,11 @@ A kubectl plugin that provides a convenient way to view AWS EKS cluster resource
 
 ### Using Krew (Recommended)
 
-[Krew](https://krew.sigs.k8s.io) is the plugin manager for kubectl command-line tool. To install kubectl-eks-viewer using Krew:
+You can add custom index(since krew only accept vendor plugins that come from the vendors) as shown below and install the plugin from there. To install kubectl-eks-viewer using Krew:
 
 ```bash
-kubectl krew install eks-viewer
+kubectl krew index add keidarcy https://github.com/keidarcy/kubectl-eks-viewer.git
+kubectl krew install keidarcy/eks-viewer
 ```
 
 After installation, verify it was successful:
