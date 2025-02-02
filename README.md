@@ -34,9 +34,80 @@ kubectl krew index add keidarcy https://github.com/keidarcy/kubectl-eks-viewer.g
 kubectl krew install keidarcy/eks-viewer
 ```
 
-After installation, verify it was successful:
-```bash
-kubectl eks-viewer --help
+Details:
+
+```
+$ kubectl krew index add keidarcy https://github.com/keidarcy/kubectl-eks-viewer.git                                                                                                                                                                                                ─╯
+WARNING: You have added a new index from "https://github.com/keidarcy/kubectl-eks-viewer.git"
+The plugins in this index are not audited for security by the Krew maintainers.
+Install them at your own risk.
+
+$ kubectl krew install  keidarcy/eks-viewer                                                                                                                                                                                                                                         ─╯
+Updated the local copy of plugin index.
+Updated the local copy of plugin index "keidarcy".
+Installing plugin: eks-viewer
+Installed plugin: eks-viewer
+\
+ | Use this plugin:
+ |      kubectl eks-viewer
+ | Documentation:
+ |      https://github.com/keidarcy/kubectl-eks-viewer
+/
+
+$ kubectl eks-viewer --help                                                                                                                                                                                                                                                         ─╯
+View EKS cluster resources.
+Without arguments, shows all resource types.
+Optionally specify a resource type to show only that type.
+
+Valid resource types:
+  - access-entries
+  - addons
+  - cluster
+  - fargate-profiles
+  - insights
+  - nodegroups
+  - pod-identity-associations
+
+Usage:
+  kubectl eks-viewer [resource-type] [flags]
+
+Examples:
+  # List all EKS resources
+  kubectl eks-viewer
+  kubectl eks-viewer -o json
+
+  # List specific resources
+  kubectl eks-viewer addons
+  kubectl eks-viewer -o json nodegroups
+  kubectl eks-viewer nodegroups --output=jsonpath='{.items.nodegroups[*].NodegroupName}
+
+  # Use with a specific context
+  kubectl eks-viewer --context=my-context
+
+Flags:
+      --allow-missing-template-keys    If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats. (default true)
+      --as string                      Username to impersonate for the operation. User could be a regular user or a service account in a namespace.
+      --as-group stringArray           Group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+      --as-uid string                  UID to impersonate for the operation.
+      --cache-dir string               Default cache directory (default "/Users/xyh/.kube/cache")
+      --certificate-authority string   Path to a cert file for the certificate authority
+      --client-certificate string      Path to a client certificate file for TLS
+      --client-key string              Path to a client key file for TLS
+      --cluster string                 The name of the kubeconfig cluster to use
+      --context string                 The name of the kubeconfig context to use
+      --disable-compression            If true, opt-out of response compression for all requests to the server
+  -h, --help                           help for kubectl
+      --insecure-skip-tls-verify       If true, the server's certificate will not be checked for validity. This will make your HTTPS connections insecure
+      --kubeconfig string              Path to the kubeconfig file to use for CLI requests.
+  -n, --namespace string               If present, the namespace scope for this CLI request
+  -o, --output string                  Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file).
+      --request-timeout string         The length of time to wait before giving up on a single server request. Non-zero values should contain a corresponding time unit (e.g. 1s, 2m, 3h). A value of zero means don't timeout requests. (default "0")
+  -s, --server string                  The address and port of the Kubernetes API server
+      --show-managed-fields            If true, keep the managedFields when printing objects in JSON or YAML format.
+      --template string                Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+      --tls-server-name string         Server name to use for server certificate validation. If it is not provided, the hostname used to contact the server is used
+      --token string                   Bearer token for authentication to the API server
+      --user string                    The name of the kubeconfig user to use
 ```
 
 ## Usage
