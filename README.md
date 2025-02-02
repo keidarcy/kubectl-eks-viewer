@@ -2,6 +2,8 @@
 
 A kubectl plugin that provides a convenient way to view AWS EKS cluster resources. This plugin allows you to quickly inspect various EKS resources like nodegroups, Fargate profiles, addons, and more, directly from your kubectl environment.
 
+Read more about [Why I created this plugin](https://xingyahao.com/posts/introducing-kubectl-eks-viewer-bridge-the-gap-between-kubectl-and-aws-cli/).
+
 ## Features
 
 - Follow kubectl output format
@@ -37,12 +39,12 @@ kubectl krew install keidarcy/eks-viewer
 Details:
 
 ```
-$ kubectl krew index add keidarcy https://github.com/keidarcy/kubectl-eks-viewer.git                                                                                                                                                                                                ─╯
+$ kubectl krew index add keidarcy https://github.com/keidarcy/kubectl-eks-viewer.git
 WARNING: You have added a new index from "https://github.com/keidarcy/kubectl-eks-viewer.git"
 The plugins in this index are not audited for security by the Krew maintainers.
 Install them at your own risk.
 
-$ kubectl krew install  keidarcy/eks-viewer                                                                                                                                                                                                                                         ─╯
+$ kubectl krew install  keidarcy/eks-viewer
 Updated the local copy of plugin index.
 Updated the local copy of plugin index "keidarcy".
 Installing plugin: eks-viewer
@@ -54,7 +56,7 @@ Installed plugin: eks-viewer
  |      https://github.com/keidarcy/kubectl-eks-viewer
 /
 
-$ kubectl eks-viewer --help                                                                                                                                                                                                                                                         ─╯
+$ kubectl eks-viewer --help
 View EKS cluster resources.
 Without arguments, shows all resource types.
 Optionally specify a resource type to show only that type.
@@ -108,6 +110,35 @@ Flags:
       --tls-server-name string         Server name to use for server certificate validation. If it is not provided, the hostname used to contact the server is used
       --token string                   Bearer token for authentication to the API server
       --user string                    The name of the kubeconfig user to use
+
+$ kubectl eks-viewer
+=== cluster ===
+NAME   VERSION   STATUS   PLATFORM VERSION   AUTH MODE
+<REDACTED>
+
+=== access-entries ===
+ACCESS ENTRY PRINCIPAL ARN    KUBERNETES GROUPS    ACCESS POLICIES
+<REDACTED>
+
+=== addons ===
+NAME    VERSION    STATUS   ISSUES
+<REDACTED>
+
+=== nodegroups ===
+NAME      STATUS   INSTANCE TYPE   DESIRED SIZE   MIN SIZE   MAX SIZE   VERSION   AMI TYPE     CAPACITY TYPE
+<REDACTED>
+
+=== fargate-profiles ===
+NAME   SELECTOR NAMESPACE   SELECTOR LABELS   POD EXECUTION ROLE ARN     SUBNETS     STATUS
+<REDACTED>
+
+=== pod-identity-associations ===
+ARN    AMESPACE   SERVICE ACCOUNT NAME   IAM ROLE ARN      OWNER ARN
+<REDACTED>
+
+=== insights ===
+NAME       CATEGORY    STATUS
+<REDACTED>
 ```
 
 ## Usage

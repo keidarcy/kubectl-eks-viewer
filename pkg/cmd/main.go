@@ -210,6 +210,17 @@ func (o *Options) Run() error {
 			},
 		},
 		{
+			resourceType: "addons",
+			fetch: func(ctx context.Context) error {
+				addons, err := o.eksClient.ListAddons(ctx)
+				resourceList.Items.Addons = addons
+				return err
+			},
+			printer: func(obj interface{}, w io.Writer) error {
+				return NewAddonPrinter().PrintObj(&AddonList{Items: resourceList.Items.Addons}, w)
+			},
+		},
+		{
 			resourceType: "nodegroups",
 			fetch: func(ctx context.Context) error {
 				nodeGroups, err := o.eksClient.ListNodeGroups(ctx)
