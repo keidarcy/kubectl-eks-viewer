@@ -139,6 +139,12 @@ ARN    AMESPACE   SERVICE ACCOUNT NAME   IAM ROLE ARN      OWNER ARN
 === insights ===
 NAME       CATEGORY    STATUS
 <REDACTED>
+
+$ kubectl krew upgrade eks-viewer
+Updated the local copy of plugin index.
+Updated the local copy of plugin index "keidarcy".
+Upgrading plugin: keidarcy/eks-viewer
+Upgraded plugin: keidarcy/eks-viewer
 ```
 
 ## Usage
