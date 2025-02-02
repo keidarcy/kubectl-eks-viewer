@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: eks-viewer
 spec:
-  version: v0.0.1
+  version: v0.0.2
   homepage: https://github.com/keidarcy/kubectl-eks-viewer
   shortDescription: View AWS EKS cluster resources
   description: |
@@ -15,41 +15,41 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_darwin_amd64.tar.gz
-    sha256: 179f2eb3e47aa2b1771cd6c10205c124213636230cfd010a6b905a4c2a148c5a
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.2/kubectl-eks-viewer_v0.0.2_darwin_amd64.tar.gz
+    sha256: 34cfb48a9f917f6c2a2c6845ff606fbbe8604013f04d07ed531e11abb67be180
     bin: kubectl-eks-viewer
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_darwin_arm64.tar.gz
-    sha256: 4a6c4c6dec934dd45f6824bf5ce0fe2c915b3082dbaeac22e0b28ed031fd1b01
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.2/kubectl-eks-viewer_v0.0.2_darwin_arm64.tar.gz
+    sha256: cf88c338e481500f16b290ec77b0d5a7595eabb26baf65d47667b4ea0a305b80
     bin: kubectl-eks-viewer
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_linux_amd64.tar.gz
-    sha256: 0d6d401063b59bff7b928eb9eb1fa9b695ecb4e62a9b105edb5b7712d3595406
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.2/kubectl-eks-viewer_v0.0.2_linux_amd64.tar.gz
+    sha256: 2893ac6eaadd81f7b44f735336193cb2ea155b329273b1aa99b1e25786d658fe
     bin: kubectl-eks-viewer
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_linux_arm64.tar.gz
-    sha256: d8af45eced01a59aead7070258093ed8d2575548e7379f832c753a993b853663
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.2/kubectl-eks-viewer_v0.0.2_linux_arm64.tar.gz
+    sha256: ae2ca68c71a29014715321dd07bf3c595f6c1aeb45930052ed4a255e3d192db0
     bin: kubectl-eks-viewer
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_windows_amd64.zip
-    sha256: af8a62e1e7195b7609157ff54660d555484033d25be16a16ff99de54568d4d7c
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.2/kubectl-eks-viewer_v0.0.2_windows_amd64.zip
+    sha256: ca9b0b2b91f7b9a2cd26350b306745e42009ac3a2d6a51ba53c740586e24958c
     bin: kubectl-eks-viewer.exe
   - selector:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_windows_arm64.zip
-    sha256: 21d6923207a709102c34d08984002b7f0c6f42c990aac67ace24d7216b089039
-    bin: kubectl-eks-viewer.exe 
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.2/kubectl-eks-viewer_v0.0.2_windows_arm64.zip
+    sha256: 328ea4443eba58dd958435ec9ee247ab97fbcbec41a441b3a6b1b2cfe17ee9d0
+    bin: kubectl-eks-viewer.exe
