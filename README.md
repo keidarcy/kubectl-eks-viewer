@@ -32,7 +32,7 @@ Read more about [Why I created this plugin](https://xingyahao.com/posts/introduc
 You can add custom index(since krew only accept vendor plugins that come from the vendors) as shown below and install the plugin from there. To install kubectl-eks-viewer using Krew:
 
 ```bash
-kubectl krew index add keidarcy https://github.com/keidarcy/kubectl-eks-viewer.git
+kubectl krew index add keidarcy https://github.com/keidarcy/krew-index.git
 kubectl krew install keidarcy/eks-viewer
 ```
 
